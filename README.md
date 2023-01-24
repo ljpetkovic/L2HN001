@@ -14,7 +14,7 @@
 
 * Horaire : mardi 10h-12h
 
-* iCampus : https://icampus.univ-paris3.fr/course/view.php?id=34915
+* Matériel : https://icampus.univ-paris3.fr/course/view.php?id=34915
 
   ---
 
