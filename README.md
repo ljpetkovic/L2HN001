@@ -6,7 +6,7 @@
 
 * Formation : mineure Humanités numériques, licence 1
 
-* Enseignante : Ljudmila PETKOVIC
+* Enseignante : Ljudmila PETKOVIC 
 
 * Semestre de printemps
 
@@ -38,12 +38,14 @@
 
   ---
 
-  ### Droits
+  ### Contact
 
-  ```html
-  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Ce travail est autorisé sous une licence<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution 4.0 International Licence</a>.
-  ```
+  ljudmila.petkovic[at]sorbonne-nouvelle.fr
 
-  
+  ---
+
+  ### Licence
+
+  ![68747470733a2f2f692e6372656174697665636f6d6d6f6e732e6f72672f6c2f62792f322e302f38387833312e706e67](https://user-images.githubusercontent.com/56683417/115237678-2150d080-a11d-11eb-903e-5a26587e12e1.png)
 
   
