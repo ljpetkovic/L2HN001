@@ -34,7 +34,7 @@
 
   ### Citer ce dépôt
 
-  Ljudmila Petkovic, Cultures numériques avancées (L2HN001), Paris : université Sorbonne Nouvelle, 2023 https://github.com/ljpetkovic/L2HN001
+  Ljudmila Petkovic, _Cultures numériques avancées (L2HN001)_, Paris : université Sorbonne Nouvelle, 2023 https://github.com/ljpetkovic/L2HN001
 
   ---
 
