@@ -20,9 +20,9 @@
 
   ### Programme
 
-  `Cours 1` : [sujet](sujet)
+  `Cours 1` : [Ligne de commande](https://github.com/ljpetkovic/L2HN001/tree/main/Ligne_de_commande)
 
-  ...
+  (à venir)
 
   ---
 
@@ -48,6 +48,6 @@
 
   <img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="68747470733a2f2f692e6372656174697665636f6d6d6f6e732e6f72672f6c2f62792f322e302f38387833312e706e67" style="zoom:80%;" />
 
-  Ce travail est autorisé sous une licence [Creative Commons Attribution 4.0 International Licence](https://creativecommons.org/licenses/by-sa/4.0/).
+  Ce travail est autorisé sous une licence [Creative Commons Attribution 4.0 International Licence](https://creativecommons.org/licenses/by-sa/4.0/deed.fr).
 
   
