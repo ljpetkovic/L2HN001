@@ -104,7 +104,7 @@ Paris, le 31 janvier 2023
 
 # Shell
 
-* interface système permettant d'accéder au « cœur » ou « noyau » (*kernel*) et d'interagir avec le système d'exploitation (SE)
+* interface système permettant d'accéder au « cœur » ou « noyau » (*kernel*) et d'interagir avec le système d'exploitation (SE) (p. ex. Windows, Mac, Linux)
 * permet d'envoyer des instructions dans un format précis, compréhensible par la machine
 * langage de programmation : *shell Unix*, qui est un interpréteur de commandes
   * le plus connu est le *Bash* (*Bourne‐Again shell*) : interpréteur en ligne de commande de type script
@@ -165,11 +165,9 @@ La coque logicielle d'un système d'exploitation peut prendre deux formes distin
 
 * écran (le plus souvent noir) destiné à recevoir des commandes Shell
 * sous Linux, il y a 6 différentes consoles
-  * `Ctrl + Alt + F1` : la console numéro 1 [terminal 1 (`tty1`)]
-  * `Ctrl + Alt + F2` : la console numéro 2 [terminal 2 (`tty2`)]
+  * `Ctrl + (Fn) + Alt + F1` : la console numéro 1 [terminal 1 (`tty1`)]
+  * `Ctrl + (Fn) + Alt + F2` : la console numéro 2 [terminal 2 (`tty2`)]
     ... 
-
-<small-text>Source : [socratic.dev](https://socratic.dev/coques-logicielles-se-retrouver-entre-shell-bash-et-autres)</small-text>
 
 ---
 
@@ -265,7 +263,7 @@ La coque logicielle d'un système d'exploitation peut prendre deux formes distin
 
 * façon dont un système d'exploitation organise les fichiers / répertoires accessibles à l'utilisateur 
 * les fichiers sont généralement affichés dans une arborescence hiérarchique
-* *Filesystem Hierarchy Standard* : « norme de la hiérarchie des systèmes de fichiers » 
+* angl. *Filesystem Hierarchy Standard* : « norme de la hiérarchie des systèmes de fichiers » 
   * GNU/Linux et la plupart des systèmes Unix
 
 ---
@@ -308,7 +306,7 @@ La coque logicielle d'un système d'exploitation peut prendre deux formes distin
 * `/home/` : répertoire des utilisateurs
 * ...
 
-Les répertoires de chaque utilisateur sont eux connus
+Les répertoires de chaque utilisateur sont eux connus (fichiers de système cachés)
 
 * `Bureau`
 * `Documents`
@@ -354,13 +352,13 @@ L'adresse du répertoire racine est `/`. Celle d'un répertoire ou d'un fichier 
 
 # Chemin relatif
 
-Le chemin que nous venons de voir est dit *absolu*, car il part de l'élément racine, mais il existe aussi des chemins **relatif** si je pars d'un autre endroit (normalement celui où je suis déjà) : `ljudmila/home/bin/bash`.
+Le chemin que nous venons de voir est dit *absolu*, car il part de l'élément racine, mais il existe aussi des chemins **relatifs** si nous partons d'un autre endroit (normalement celui où nous sommes déjà) : `ljudmila/home/bin/bash`.
 
 ---
 
 # Chemin relatif
 
-Parfois il est impossible de savoir quel est le nom du fichier précédent dans l'arborescence, il est possible d'utiliser un raccourci : `..` signifie ainsi « remonter d'un fichier » :
+Parfois il est impossible de savoir quel est le nom du fichier précédent dans l'arborescence, il est possible d'utiliser un raccourci : `..` signifie ainsi « remonter d'un dossier » :
 
 ```bash
 ljudmila/home/bin/bash
@@ -384,12 +382,17 @@ des tirets bas (`nom_de_Fichier.extension`)
 2.3 Tentez d'être cohérent dans cette stratégie
 3. Versionnez les documents (`nom-de-Fichier-v1.extension`) ou
 datez‐les en commençant par l'année (`nom-de-Fichier-AAA-MM-JJ.extension`)
-4. L'extension doit être choisie avec attention : un `.txt` n'est pas un
-`.xml`
+4. L'extension doit être choisie avec attention : un `.txt` n'est pas un `.xml`
 
 ---
 
 # Utiliser la ligne de commande
+
+---
+
+# Téléchargement du dépôt GitHub
+
+>  Pour le tout premier cours, télécharger le [dépôt GitHub](https://github.com/ljpetkovic/L2HN001), en cliquant sur `Code > Download ZIP` (plus tard, nous allons apprendre comment *cloner* un dépôt et manipuler ses fichiers et ses répertoires)
 
 ---
 
@@ -401,7 +404,7 @@ Pour Linux Ubuntu
 
 Pour Windows 
 
-* installer Windows subsystem for Linux (WSL) ([tutoriel](https://people.montefiore.uliege.be/nvecoven/ci/files/tuto_bash/tuto_bash.html))
+* installer Windows subsystem for Linux (WSL) ([tutoriel](https://people.montefiore.uliege.be/nvecoven/ci/files/tuto_bash/tuto_bash.html)) ou Microsoft Power Shell (le plus simplement est d'installer le package `.zip` → [tutoriel](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)).
 
 Pour Mac
 
@@ -419,13 +422,15 @@ Ouvrez le terminal, et tapez `pwd`. Que se passe-t-il ?
 
 Montrer où nous sommes dans le système des fichiers et des répertoires.
 
+(angl. *print working directory*)
+
 ---
 
 # Fonctionnement
 
 * Bash exécute les instructions ligne par ligne : la fin de ligne est la fin
   de commande
-* une commande doit être complète, sinon l'invite `>` s'affiche.
+* une commande doit être complète, sinon elle ne s'execute pas
 * une commande est appelée par son nom (par exemple `pwd`), qui permet de retrouver la fonction, le *builtin*, le programme associé
   * une fonction est un bloc de commandes qui s'exécute lorsque la fonction est appelée
   * un *builtin* (« préconstruit », comprendre « prédéfini ») est une mini‐opération pré‐construite en bash (dont `pwd`)
@@ -435,7 +440,7 @@ Montrer où nous sommes dans le système des fichiers et des répertoires.
 
 # Localisation
 
-Certaines commandes prédéfinies sont enregistrées dans la machine (comme `pwd` ou `ls`): leur nom suffit pour les appeler.
+Certaines commandes prédéfinies sont enregistrées dans la machine (comme `pwd` ou `ls`) : leur nom suffit pour les appeler.
 
 ```bash
 pwd
@@ -452,7 +457,6 @@ commandes/commande_1.sh
 ```
 
 * Devinez le contenu du fichier
-* Retrouvez le fichier `commande_1.sh`
 
 ---
 
@@ -466,7 +470,7 @@ commandes/commande_1.sh
 
 # Argument
 
-Certaines commandes vont nécessiter des précisions: copier *ceci*, aller *là‐bas*. Pour donner ces précisions, on va ajouter à la commande des arguments.
+Certaines commandes vont nécessiter des précisions : copier *ceci*, aller *là‐bas*. Pour donner ces précisions, on va ajouter à la commande des arguments.
 
 Prenons l'exemple de la commande `cd` (*change directory*) qui permet de se déplacer. On pourrait la traduire par `« aller à » [commande] + lieu [argument]`. Le lieu où l'on se dirige prend la forme du répertoire‐destination placé juste après la commande :
 
@@ -479,27 +483,26 @@ cd commandes
 # Changer le répertoire
 
 ```bash
-cd Documents
+cd Documents # aller dans le répertoire 'Documents'
 ```
 
 ```bash
-cd ../..
+cd ../.. # remonter de deux dossiers
 ```
-
-ou bien rester dans le même répertoire :
 
 ```bash
-cd .
+cd . # rester dans le même répertoire
 ```
+
+* Retrouvez le fichier `commande_1.sh`
 
 ---
 
 # Astuces pour naviguer dans le système des fichiers
 
-* Faire glisser des éléments dans une fenêtre Terminal
-  * vous pouvez gagner du temps en faisant glisser un élément dans une fenêtre Terminal afin d’entrer le chemin absolu d’un fichier ou le contenu d’un extrait de texte
-
-* Ouvrir le terminal dans le répertoire souhaité
+* Faire glisser des éléments dans une fenêtre Terminal afin d’entrer le chemin absolu d’un fichier / répertoire
+  
+* Ouvrir le terminal à partir du répertoire souhaité
   * clique droite sur le répertoire > `Ouvrir dans un terminal`
 
 * Flèche haut `↑` et bas `↓` pour se déplacer dans l'historique du terminal
@@ -529,7 +532,7 @@ Parfois on peut avoir besoin de plusieurs arguments. On les ajoute ainsi les uns
 * commande `cp` (*copy*), que l'on peut traduire par `« copier » [commande] + tel chose [argument 1] + à tel endroit [argument 2]` :
 
   ```bash
-  cp commandes/test.sh .
+  cp commandes/test.sh ..
   ```
 
 * commande `rm` (*remove*) qui permet d'effacer un fichier :
@@ -542,13 +545,14 @@ Parfois on peut avoir besoin de plusieurs arguments. On les ajoute ainsi les uns
 
 # Options
 
-On peut ajouter des options, qui vont modifier le comportement normal de la commandes. Elles sont placées après la commande et son précédées d'un tiret (`-`).
+On peut ajouter des options, qui vont modifier le comportement normal d'une commande. Elles sont placées après la commande et son précédées d'un tiret (`-`).
 
 `ls -a` : lister les noms des fichiers et des répertoires *cachés* dans le répertoire courant
 
+<small-text>Fichiers commençant par un point, p. ex. `.fichier_cache.txt`</small-text>
 <small-text>Raccourci pour afficher les fichiers cachés : `Ctrl + H` (Linux)</small-text>
 
-`ls --help` : expliquer comment utiliser une commande et quelles options elle accepte 
+`ls --help` : expliquer comment utiliser la commande `ls` et quelles options elle accepte 
 
 ---
 
@@ -605,7 +609,7 @@ La commande `touch` permet de créer un fichier :
 touch mon_script.sh
 ```
 
-Tentons de créer notre premier script bash avec la commande `nano`.
+Tentons de créer notre premier script bash avec la commande `nano mon_script.sh`.
 
 Petite astuce : on déclare normalement le type de document avec un appel de script (ou *Shebang*) indiquant que le fichier n'est pas un fichier binaire mais un script :
 
@@ -621,16 +625,16 @@ ls
 Ce script permet d'exécuter la commande `ls`. Il est exécuté de manière suivante :
 
 ```bash
-./mon_script.sh
+bash mon_script.sh
 ```
 
 ou 
 
 ```bash
-bash mon_script.sh
+./mon_script.sh
 ```
 
-<small-text>Si vous obtenez un message d'erreur : `bash: ./test.sh: Permission non accordée`, il faut donner au fichier la permission d'exécution (le rendre exécutable) `chmod +x test.sh`</small-text>
+<small-text>Si vous obtenez un message d'erreur : `bash: ./mon_script.sh: Permission non accordée`, il faut donner au fichier la permission d'exécution (le rendre exécutable) `chmod +x mon_script.sh`</small-text>
 
 ---
 
@@ -679,13 +683,7 @@ mv FICHIER_1 FICHIER_2 RÉPERTOIRE_CIBLE
 Si tous les fichiers ont la même extension, il est possible d'utiliser un joker (`*`) :
 
 ```bash
-mv FICHIER_1 FICHIER_2 RÉPERTOIRE_CIBLE
-```
-
-peut devenir :
-
-```bash
-mv *.txt RÉPERTOIRE_CIBLE
+mv *.sh RÉPERTOIRE_CIBLE
 ```
 
 ---
@@ -700,11 +698,11 @@ rm mon_script.sh
 
 Pour effacer un répertoire contenant des fichiers, il faut utiliser :
 
-* l'option `-r` (*recursively*) qui permet d'effacer tout les fichiers contenus l'un après l'autre
+* l'option `-r` (*recursively*) qui permet d'effacer tous les fichiers contenus l'un après l'autre
 * l'option `-f` (*force*) pour éviter d'avoir à valider pour chaque fichier
 
 ```bash
-rm -rf mon_script
+rm -rf test
 ```
 
 ---
@@ -714,7 +712,7 @@ rm -rf mon_script
 Il est possible de faire des recherches dans un fichier en utilisant la fonction `grep` :
 
 ```bash
-grep "ordinateur" CNA.txt
+grep "ordinateur" fichier_test.txt
 ```
 
 Nous pouvons faire des requêtes en utilisant les expressions régulières (*regex*).
@@ -722,16 +720,14 @@ Nous pouvons faire des requêtes en utilisant les expressions régulières (*reg
 Trouvons tous les mots commençant par la lettre « m », en majuscule ou en minuscule.
 
 ```bash
-grep -Eoi "\bm\w+" CNA.txt
+grep -Eoi "\bm\w+" fichier_test.txt
 ```
 
-`-E` : expression rationnelle étendue (≠ expression rationnelle simple `-G`)
-
-`-o` : n'afficher que l'occurrence en question (*match*)
-
-`-i` : trouver le mot en majuscule ou en minuscule
-
-`\b` : limite de mot, c'est-à-dire le début d'un mot
+<smaller-text>`-E` : expression rationnelle étendue (≠ expression rationnelle simple `-G`)
+<smaller-text>`-o` : n'afficher que l'occurrence en question (*match*)</smaller-text>
+<smaller-text>`-i` : trouver le mot en majuscule ou en minuscule</smaller-text>
+<smaller-text>`\b` : limite de mot, c'est-à-dire le début d'un mot<smaller-text>
+<smaller-text>`\w+` : un ou plusieurs caractères alphabétiques<smaller-text>
 
 ---
 
@@ -765,7 +761,7 @@ Comment remplacer *René* par le nom d'une personne ?
 Dans la séquence *Coucou* + *nom* si *nom* doit pouvoir changer il s'agit d'une variable. Cette dernière est stockée sous un nom arbitraire :
 
 ```bash
-nom="Michel"
+nom="Michel" # ne pas séparer la variable du signe « égal à » (nom = "Michel")
 ```
 
 et appelée avec son nom précédée de `$` :
@@ -810,6 +806,10 @@ Solution : `solution_coucou_3.sh`
 
 # Avantages de l'utilisation de la ligne de commande
 
-Automatisation des tâches
+* **Flexibilité** : combiner les commandes et obtenir une palette pratiquement infinie de fonctions nouvelles
+* **Fiabilité** : tendance à s'exécuter de la même manière sur différents SE (« couteau suisse »)
+* **Rapidité** : automatisation des tâches à grande échelle (p. ex. renommer un ensemble des fichiers d'un seul coup)
+* **Expérience** : communiquer avec votre ordinateur plus directement qu'avec les programmes graphiques, en apprenant ainsi énormément sur son fonctionnement interne
+* **Économisation des ressources** : utilise les ressources de l'ordinateur beaucoup plus parcimonieusement que les programmes graphiques
 
-* renommer un ensemble des fichiers d'un seul coup
+<small-text>Source : [Floss Manuals](https://fr.flossmanuals.net/introduction-a-la-ligne-de-commande/introduction/)</small-text>
