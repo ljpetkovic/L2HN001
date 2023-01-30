@@ -24,7 +24,7 @@
 
 * Pour le tout premier cours, télécharger le dépôt, en cliquant sur `Code` > `Download ZIP` (plus tard nous allons apprendre comment *cloner* un dépôt et manipuler ses fichiers et ses répertoires)
 
-* Pour exécuter les commandes Bash en ligne de commande sous Windows, il faut installer Windows subsystem for Linux (WSL) ([tutoriel](https://people.montefiore.uliege.be/nvecoven/ci/files/tuto_bash/tuto_bash.html)) ou Microsoft Power Shell (le plus simplement c'est d'installer le package .zip → [tutoriel](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)).
+* Pour exécuter les commandes Bash en ligne de commande sous Windows, il faut installer Windows subsystem for Linux (WSL) ([tutoriel](https://people.montefiore.uliege.be/nvecoven/ci/files/tuto_bash/tuto_bash.html)) ou Microsoft Power Shell (le plus simplement est d'installer le package .zip → [tutoriel](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)).
 
   > Pour Linux Ubuntu, il suffit de taper `Ctrl + Alt + T` ou `terminal` dans le champ de recherche.
   >
