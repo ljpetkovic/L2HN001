@@ -14,7 +14,7 @@
 
 ### Programme
 
-`Cours 1` : [Ligne de commande](https://github.com/ljpetkovic/L2HN001/tree/main/Ligne_de_commande)
+`Cours 1` : [Ligne de commande](https://github.com/ljpetkovic/L2HN001/tree/main/1_Ligne_de_commande)
 
 (à venir)
 
