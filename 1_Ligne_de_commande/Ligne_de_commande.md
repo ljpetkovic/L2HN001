@@ -404,7 +404,7 @@ Pour Linux Ubuntu
 
 Pour Windows 
 
-* installer Windows subsystem for Linux (WSL) ([tutoriel](https://people.montefiore.uliege.be/nvecoven/ci/files/tuto_bash/tuto_bash.html)) ou Microsoft Power Shell (le plus simplement est d'installer le package `.zip` → [tutoriel](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)).
+* installer Microsoft Power Shell (package `.zip` → [tutoriel](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3))
 
 Pour Mac
 
