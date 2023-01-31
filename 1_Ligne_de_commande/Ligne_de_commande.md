@@ -404,7 +404,7 @@ Pour Linux Ubuntu
 
 Pour Windows 
 
-* installer Microsoft Power Shell (package `.zip` → [tutoriel](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3))
+* installer Microsoft Power Shell (télécharger le package `.zip` puis installer Power Shell → [tutoriel](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3))
 
 Pour Mac
 
