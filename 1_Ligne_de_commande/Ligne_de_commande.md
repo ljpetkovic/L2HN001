@@ -68,7 +68,7 @@ smaller-text {
 
 
 
- # Ligne de commande
+ # Ligne de commande et Bash
 
 ![bg left:40% 80% width:150pt height:100pt](https://www.defi-metiers.fr/sites/default/files/doc-kelios/Logo/2021/02/15/sorbonne_nouvelle-devise_bleu.jpg)
 
