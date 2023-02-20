@@ -253,7 +253,7 @@ La coque logicielle d'un système d'exploitation peut prendre deux formes distin
 * `ljudmila` : nom d'utilisateur
 * `ljudmila-Latitude-5580` : nom de l'ordinateur
 * `@` : chez (angl. *at*)
-* `~/Bureau` : on est parti du dossier-racine `~` et arrivé au dossier `/Bureau`
+* `~/Bureau` : on est parti du dossier personnel  `~` et arrivé au dossier `/Bureau`
 * `$` : on est connecté en tant que simple utilisateur 
   * <small-text>le cas où on sera connecté en tant que « super utilisateur » le `$` sera remplacé par `#`</small-text>
 
@@ -404,7 +404,7 @@ Pour Linux Ubuntu
 
 Pour Windows 
 
-* installer Microsoft Power Shell (télécharger le package `.zip` puis installer Power Shell → [tutoriel](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3))
+* installer Microsoft Power Shell (télécharger le package `.zip` puis installer Power Shell → [tutoriel](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)), ainsi que Windows Subsystem for Linux (WSL → [tutoriel](https://people.montefiore.uliege.be/nvecoven/ci/files/tuto_bash/tuto_bash.html))
 
 Pour Mac
 
@@ -464,7 +464,7 @@ commandes/commande_1.sh
 
 `ls` : lister les noms des fichiers et des répertoires *visibles* dans le répertoire courant
 
-`ls -l` : utiliser un format de liste longue (avec les indications des permissions pour chaque fichier)
+`ls -l` : utiliser un format de liste longue (avec les indications des permissions pour chaque fichier) 
 
 ---
 
@@ -547,12 +547,12 @@ Parfois on peut avoir besoin de plusieurs arguments. On les ajoute ainsi les uns
 
 On peut ajouter des options, qui vont modifier le comportement normal d'une commande. Elles sont placées après la commande et son précédées d'un tiret (`-`).
 
-`ls -a` : lister les noms des fichiers et des répertoires *cachés* dans le répertoire courant
+`ls -a` (ou `ls -Force` sous Windows) : lister les noms des fichiers et des répertoires *cachés* dans le répertoire courant
 
 <small-text>Fichiers commençant par un point, p. ex. `.fichier_cache.txt`</small-text>
-<small-text>Raccourci pour afficher les fichiers cachés : `Ctrl + H` (Linux)</small-text>
+<small-text>Raccourci pour afficher les fichiers cachés : `Ctrl + H` (Linux) ou `(fn) + Cmd + Shift + point` (Mac, clavier français)</small-text>
 
-`ls --help` : expliquer comment utiliser la commande `ls` et quelles options elle accepte 
+`ls --help ` (ou `Get-Help ls` sous Windows) : expliquer comment utiliser la commande `ls` et quelles options elle accepte 
 
 ---
 
@@ -560,7 +560,7 @@ On peut ajouter des options, qui vont modifier le comportement normal d'une comm
 
 ---
 
-# Lecture
+# Lecture (Mac + Linux)
 
 Vous pouvez regarder ce que contient un fichier avec la commande `less` (visualiseur de fichier texte en ligne de commande) :
 
@@ -583,15 +583,37 @@ file commandes/commande_1.sh
 
 ---
 
+# Lecture (Windows)
+
+Équivalents des commandes `less`, `touch`, `nano`, `vim` :
+
+1. `less`  ⇒ `gc` ou `Get-Content` pour lire tout le contenu d'un fichier :
+
+```bash
+gc commandes/commande_1.sh
+Get-Content commandes/commande_1.sh
+```
+
+2. `touch` ⇒ `ni` ou `New-Item` pour créer un fichier :
+
+```
+ni mon_script.sh
+New-Item mon_script.sh
+```
+
+3. `nano` et `vim` ⇒ ouvrir votre fichier `mon_script.sh` dans votre éditeur de texte standard (p. ex.  Notepad) pour l'éditer ensuite.
+
+---
+
 # Aide
 
-La commande `man` (avec en argument le nom de la commande) permet d'afficher le manuel de la commande :
+La commande `man` (`Get-Help` sous Windows) (avec en argument le nom de la commande) permet d'afficher le manuel de la commande :
 
 ```bash
 man ls
 ```
 
-La commande `compgen -c` permet d'afficher toutes les commandes disponibles (`compgen -a` tous les *alias*) :
+La commande `compgen -c` (`Get-Command` pour Windows) permet d'afficher toutes les commandes disponibles (`compgen -a` tous les *alias* (`Get-Alias` pour Windows)) :
 
 ```bash
 compgen -c
@@ -618,9 +640,11 @@ Petite astuce : on déclare normalement le type de document avec un appel de scr
 ls
 ```
 
+<small-text>Pour quitter et sauvegarder le fichier : suivre les instructions en bas du Terminal : `Ctrl + X` (ou `^X`) +`o`<small-text>
+
 ---
 
-# Exécution du script
+# Exécution du script (Mac / Linux)
 
 Ce script permet d'exécuter la commande `ls`. Il est exécuté de manière suivante :
 
@@ -635,6 +659,32 @@ ou
 ```
 
 <small-text>Si vous obtenez un message d'erreur : `bash: ./mon_script.sh: Permission non accordée`, il faut donner au fichier la permission d'exécution (le rendre exécutable) `chmod +x mon_script.sh`</small-text>
+
+---
+
+# Exécution du script (Windows)
+
+Afin de pouvoir exécuter le script Bash sous Windows, il faut créer un script PowerShell, avec l'extension `.ps1` :
+
+1. Éditer un fichier dans Notepad et le sauvegarder sous le nom `mon_script.ps1`
+
+2. Y copier le contenu suivant :
+
+   ```powershell
+   Write-Host "Je viens de lancer mon tout premier script"
+   ```
+
+3. Taper dans PowerShell :
+
+   ```powershell
+   ./mon_script.ps1
+   ```
+
+   ou
+
+   ```powershell
+   powershell ./mon_script.ps1
+   ```
 
 ---
 
@@ -668,7 +718,7 @@ cp test/mon_script.sh test/mon_script_2.sh
 
 # Déplacer le fichier
 
-Un alternative à la commande `cp` est la commande commande `mv` (*move*), qui permet de déplacer (et non copier) un fichier :
+Un alternative à la commande `cp` est la commande commande `mv` (*move*) qui permet de déplacer (et non copier) un fichier :
 
 ```bash
 mv mon_script.sh test
@@ -709,7 +759,7 @@ rm -rf test
 
 # Rechercher
 
-Il est possible de faire des recherches dans un fichier en utilisant la fonction `grep` :
+Faire des recherches dans un fichier : `grep` (`Select-String` pour Windows) :
 
 ```bash
 grep "ordinateur" fichier_test.txt
@@ -731,6 +781,24 @@ grep -Eoi "\bm\w+" fichier_test.txt
 
 ---
 
+# Rechercher (pour Windows)
+
+Faire des recherches dans un fichier : `Select-String`
+
+Recherche simple :
+
+```powershell
+Select-String "ordinateur" ./fichier_test.txt
+```
+
+Recherche avec les regex :
+
+```powershell
+Select-String -Pattern "\bm\w+" ./fichier_test.txt
+```
+
+---
+
 # Premier script - exercice guidé
 
 `echo`
@@ -745,7 +813,7 @@ Comment remplacer *René* par le nom d'une personne ?
 
 ---
 
-# Première étape
+# Première étape (Mac / Linux)
 
 1. Créer le fichier `coucou.sh` avec la commande `touch`
 2. Ouvrez‐le avec la commande `nano`
@@ -756,7 +824,32 @@ Comment remplacer *René* par le nom d'une personne ?
 
 ---
 
-# Créer une variable
+# Première étape (Windows)
+
+1. Créer le fichier `coucou.ps1` avec la commande `New-Item`
+
+2. Éditer le fichier créé dans Notepad :
+
+   ```powershell
+   $nom="Michel"
+   echo "Coucou $nom"
+   ```
+
+3. Lancer le script de deux manières possibles (en tant qu'administrateur → `Run PowerShell as administrator`):
+
+   ```powershell
+   powershell ./commandes/coucou.ps1
+   ```
+
+   ou
+
+   ```powershell
+   ./commandes/coucou.ps1
+   ```
+
+---
+
+# Créer une variable (Mac / Linux)
 
 Dans la séquence *Coucou* + *nom* si *nom* doit pouvoir changer il s'agit d'une variable. Cette dernière est stockée sous un nom arbitraire :
 
@@ -774,9 +867,35 @@ Solution : `solution_coucou.sh`
 
 ---
 
-# Saisir la variable
+# Créer une variable (Windows)
 
-L'idéal serait cependant de demander à l'utilisateur de saisir lui‐même son nom. Pour cela nous avons la commande `read` qui permet de rentrer du texte dans le script.
+1. Créer un fichier dans Notepad
+
+2. Ajouter du contenu suivant :
+
+   ```powershell
+   $nom = Read-Host nom
+   echo "Hello $nom"
+   ```
+
+3. Lancer le script de deux manières possibles :
+
+   ```powershell
+   powershell ./commandes/coucou_2.ps1
+   ./commandes/coucou_2.ps1
+   ```
+
+   ou
+
+   ```powershell
+   ./coucou_2.ps1
+   ```
+
+---
+
+# Saisir la variable (Mac / Linux)
+
+L'idéal serait cependant de demander à l'utilisateur de saisir lui‐même son nom. Pour cela nous avons la commande `read` (`Read-Host` sous Windows) qui permet de rentrer du texte dans le script.
 
 Il suffit donc de remplacer la ligne appelant la variable avec la commande suivante :
 
@@ -787,6 +906,46 @@ read nom
 lancez le script : que se passe-t-il ?
 
 Solution : `solution_coucou_2.sh`
+
+---
+
+# Saisir la variable (Windows)
+
+1. Demander une saisie :
+
+   ```bash
+   echo "Comment t'appelles-tu ?"
+   ```
+
+   
+
+2. Créer la variable `$nom` en lui assignant la possibilité de saisir un texte :
+
+   ```powershell
+   $nom = Read-Host nom
+   ```
+
+3. Écrire une sortie « Coucou [NOM] »
+
+   ```bash
+   echo = "Hello $nom"
+   ```
+
+---
+
+# Saisir la variable (Windows)
+
+Lancer le script :
+
+```powershell
+powershell ./commandes/coucou_2.ps1
+```
+
+ou
+
+```powershell
+./commandes/coucou_2.ps1
+```
 
 ---
 
