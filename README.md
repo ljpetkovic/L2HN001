@@ -14,7 +14,7 @@
 
 ### Programme
 
-`Cours 1` : [Ligne de commande](https://github.com/ljpetkovic/L2HN001/tree/main/1_Ligne_de_commande)
+`Cours 1-4` : [Ligne de commande](https://github.com/ljpetkovic/L2HN001/tree/main/1_Ligne_de_commande)
 
 (à venir)
 
@@ -22,7 +22,7 @@
 
 ### Prérequis
 
-* Pour le tout premier cours, télécharger le dépôt, en cliquant sur `Code` > `Download ZIP` (plus tard nous allons apprendre comment *cloner* un dépôt et manipuler ses fichiers et ses répertoires)
+* Pour les premiers cours, télécharger le dépôt, en cliquant sur `Code` > `Download ZIP` (plus tard nous allons apprendre comment *cloner* un dépôt et manipuler ses fichiers et ses répertoires)
 
 * Pour exécuter les commandes Bash en ligne de commande sous Windows, il faut installer Microsoft Power Shell (le plus simplement est de télécharger le package `.zip` puis d'installer Power Shell → [tutoriel](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)).
 
