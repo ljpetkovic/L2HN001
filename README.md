@@ -30,6 +30,8 @@
   >
   > Pour Mac, il suffit de taper `terminal` dans le champ de recherche (`Terminal.app`  dans `Applications` > `Utilitaires`)
   
+  
+  
 * Pour autoriser l'exécution des scripts PowerShell sous Windows :
 
   * Cliquez sur le bouton **Démarrer** > **Tous les programmes** > **Accessoires** > **Windows PowerShell**.
