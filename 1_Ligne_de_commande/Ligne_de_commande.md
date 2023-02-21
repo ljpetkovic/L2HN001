@@ -708,13 +708,13 @@ Afin de pouvoir exécuter le script Bash sous Windows, il faut créer un script 
 
 # Autoriser l'exécution du script II (Windows)
 
-* L'autre possibilité est de saisir la commande suivante lors de l'étape 3 :
+* L'autre possibilité est de saisir la commande suivante lors de l'étape **3.** :
 
   ```powershell
   Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
   ```
 
-  puis de valider par **Entrée**, et de refaire les étapes 4. et 5. 
+  puis de valider par **Entrée**, et de refaire les étapes **4.** et **5.** 
 
 * De cette manière, tous les scripts s’exécutent, mais ce niveau n’est pas du tout sécurisé ! si vous optez pour une alternative plus sécurisée, lancez :
 
